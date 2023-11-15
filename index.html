@@ -25,19 +25,25 @@
             v-model="newTask.text"
             @keyup.enter="addTask"
           />
-          <button class="btn btn-primary ms-3" @click="addTask">aggiungi</button>
+          <button class="btn btn-primary ms-3" @click="addTask">
+            aggiungi
+          </button>
         </div>
 
-        <div>
-          <ul class="list-group">
+        <div class="d-flex justify-content-center">
+          <ul class="list-group w-50">
             <li
               class="list-group-item d-flex justify-content-between"
               v-for="(task, index) in toDoList"
               :key="index"
             >
-              {{ task.text }}
+              <p :class="{'text-decoration-line-through':task.done}">
+                {{ task.text }}
+              </p>
               <div>
-                <button class="btn btn-success me-2" @click="">done</button>
+                <button class="btn btn-success me-2" @click="doneTask(index)">
+                  done
+                </button>
                 <button class="btn btn-danger" @click="clearTask(index)">
                   X
                 </button>

@@ -18,5 +18,8 @@ createApp({
     clearTask: function (index) {
       this.toDoList.splice(index, 1);
     },
+    doneTask(index) {
+      this.toDoList[index].done = true;
+    },
   },
 }).mount("#app");
