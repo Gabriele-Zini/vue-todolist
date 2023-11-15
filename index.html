@@ -15,6 +15,7 @@
   </head>
   <body>
     <div id="app">
+      <h1 class="text-center m-3">To Do List</h1>
       <div class="container">
         <div class="d-flex justify-content-center my-5">
           <label class="me-3" for="new-task">inserisci task</label>
@@ -24,12 +25,23 @@
             v-model="newTask.text"
             @keyup.enter="addTask"
           />
+          <button class="btn btn-primary ms-3" @click="addTask">aggiungi</button>
         </div>
 
         <div>
           <ul class="list-group">
-            <li class="list-group-item" v-for="task in toDoList" :key="task.id">
+            <li
+              class="list-group-item d-flex justify-content-between"
+              v-for="(task, index) in toDoList"
+              :key="index"
+            >
               {{ task.text }}
+              <div>
+                <button class="btn btn-success me-2" @click="">done</button>
+                <button class="btn btn-danger" @click="clearTask(index)">
+                  X
+                </button>
+              </div>
             </li>
           </ul>
         </div>
