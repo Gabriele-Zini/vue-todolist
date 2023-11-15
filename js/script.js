@@ -19,7 +19,7 @@ createApp({
       this.toDoList.splice(index, 1);
     },
     doneTask(index) {
-      this.toDoList[index].done = true;
+      this.toDoList[index].done = !this.toDoList[index].done
     },
   },
 }).mount("#app");
