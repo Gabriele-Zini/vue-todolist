@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="d-flex justify-content-center my-5">
+          <label class="me-3" for="new-task">inserisci task</label>
+          <input
+            id="new-task"
+            type="text"
+            v-model="newTask.text"
+            @keyup.enter="addTask"
+          />
+        </div>
+
+        <div>
+          <ul class="list-group">
+            <li class="list-group-item" v-for="task in toDoList" :key="task.id">
+              {{ task.text }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
