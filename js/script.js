@@ -22,9 +22,11 @@ createApp({
       this.newTask = { text: "", done: false };
     },
     clearTask: function (index) {
+      console.log("delete")
       this.toDoList.splice(index, 1);
     },
     doneTask(index) {
+      console.log("toggle")
       this.toDoList[index].done = !this.toDoList[index].done;
     },
   },

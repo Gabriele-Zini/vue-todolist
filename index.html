@@ -49,7 +49,7 @@
               v-for="(task, index) in toDoList"
               :key="index"
             >
-              <p :class="{'text-decoration-line-through':task.done}">
+              <p :class="{'text-decoration-line-through':task.done}" class="m-0 align-self-center">
                 {{ task.text }}
               </p>
 
@@ -70,7 +70,7 @@
         <!-- /task list -->
         <div class="d-flex justify-content-center">
           <div v-if="toDoList.length === 0" class="card w-50 text-center">
-            <p class="fw-bolder text-uppercase">la tua lista è vuota</p>
+            <p class="fw-bolder text-uppercase align-self-center m-0 p-3">la tua lista è vuota</p>
           </div>
         </div>
       </div>
