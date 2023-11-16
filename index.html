@@ -61,6 +61,11 @@
           </ul>
         </div>
         <!-- /task list -->
+        <div class="d-flex justify-content-center">
+          <div v-if="toDoList.length === 0" class="card w-50 text-center">
+            <p class="fw-bolder text-uppercase">la tua lista è vuota</p>
+          </div>
+        </div>
       </div>
     </div>
 
