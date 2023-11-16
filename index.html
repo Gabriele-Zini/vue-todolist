@@ -14,9 +14,12 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
+    <!-- vue app -->
     <div id="app">
+      <!-- title -->
       <h1 class="text-center m-3">To Do List</h1>
       <div class="container">
+        <!-- input section -->
         <div class="d-flex justify-content-center my-5">
           <label class="me-3" for="new-task">inserisci task</label>
           <input
@@ -30,8 +33,10 @@
           </button>
         </div>
 
+        <!-- task list -->
         <div class="d-flex justify-content-center">
           <ul class="list-group w-50">
+            <!-- single task -->
             <li
               class="list-group-item d-flex justify-content-between"
               v-for="(task, index) in toDoList"
@@ -40,6 +45,8 @@
               <p :class="{'text-decoration-line-through':task.done}">
                 {{ task.text }}
               </p>
+
+              <!-- buttons -->
               <div>
                 <button class="btn btn-success me-2" @click="doneTask(index)">
                   done
@@ -48,9 +55,12 @@
                   X
                 </button>
               </div>
+              <!-- /buttons -->
             </li>
+            <!-- /single task -->
           </ul>
         </div>
+        <!-- /task list -->
       </div>
     </div>
 
