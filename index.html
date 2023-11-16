@@ -20,17 +20,24 @@
       <h1 class="text-center m-3">To Do List</h1>
       <div class="container">
         <!-- input section -->
-        <div class="d-flex justify-content-center my-5">
-          <label class="me-3" for="new-task">inserisci task</label>
+        <div class="d-flex justify-content-center mt-5">
+          <label class="me-3" for="new-task">inserisci un nuovo task</label>
           <input
             id="new-task"
             type="text"
             v-model="newTask.text"
             @keyup.enter="addTask"
+            placeholder="inserisci task"
           />
+
           <button class="btn btn-primary ms-3" @click="addTask">
             aggiungi
           </button>
+        </div>
+        <div class="d-flex justify-content-center mb-5">
+          <small v-show="visible" class="text-danger"
+            >il task non può essere vuoto</small
+          >
         </div>
 
         <!-- task list -->

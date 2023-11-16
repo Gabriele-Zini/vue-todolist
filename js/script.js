@@ -6,20 +6,26 @@ createApp({
       newTask: {
         text: "",
         done: false,
+        visible: false,
       },
       toDoList: [],
     };
   },
   methods: {
     addTask: function () {
-      this.toDoList.push(this.newTask);
+      this.visible = false;
+      if (this.newTask.text.trim() !== "") {
+        this.toDoList.push(this.newTask);
+      } else {
+        this.visible = true;
+      }
       this.newTask = { text: "", done: false };
     },
     clearTask: function (index) {
       this.toDoList.splice(index, 1);
     },
     doneTask(index) {
-      this.toDoList[index].done = !this.toDoList[index].done
+      this.toDoList[index].done = !this.toDoList[index].done;
     },
   },
 }).mount("#app");
